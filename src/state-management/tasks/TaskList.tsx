@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import AuthContext from "./context/authContext";
-import useTask from "./hooks/useTask";
-import useAuth from "./hooks/useAuth";
+import useAuth from "../hooks/useAuth";
+import TaskContext from "./taskContext";
 
 const TaskList = () => {
   // 4. Access share data using useContext hook
-  const { tasks, dispatch } = useTask();
+  const { tasks, dispatch } = useContext(TaskContext);
   const { user } = useAuth();
 
   return (

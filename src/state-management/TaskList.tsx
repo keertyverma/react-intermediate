@@ -1,8 +1,10 @@
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
+import TaskContext from "./context/taskContext";
 
 const TaskList = () => {
-  const [tasks, dispatch] = useReducer(taskReducer, []);
+  // 4. Access share data using useContext hook
+  const { tasks, dispatch } = useContext(TaskContext);
 
   return (
     <>

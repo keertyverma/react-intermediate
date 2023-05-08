@@ -1,13 +1,16 @@
 import { useContext, useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
 import TaskContext from "./context/taskContext";
+import AuthContext from "./context/authContext";
 
 const TaskList = () => {
   // 4. Access share data using useContext hook
   const { tasks, dispatch } = useContext(TaskContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <>
+      <p>User: {user}</p>
       <button
         onClick={() =>
           dispatch({
